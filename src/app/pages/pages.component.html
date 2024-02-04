@@ -1,0 +1,233 @@
+<!-- <nz-layout>
+  <nz-header>
+    <div class="logo">
+      
+      <span nz-icon style="color: hotpink;">
+       <img src="https://s3.ap-south-1.amazonaws.com/www.calmscientadmin.com/production/assets/images/logo.svg">
+      </span>    </div>
+  
+  </nz-header>
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light">
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li routerLink="patients"  nz-menu-item>
+          
+          <span>Patients</span>
+        </li>
+        <li  routerLink="Course-Work"  nz-menu-item>
+          
+          <span>Course work</span>
+        </li>
+       
+      </ul>
+    </nz-sider>
+    <nz-layout class="inner-layout">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>{{currentRoute}}</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <nz-content>
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout> -->
+
+<body  [ngClass]="{'nav-md':!isSideNavCollpased,'nav-sm':isSideNavCollpased}">
+  <div class="container body">
+    <div class="main_container">
+      <!-- [ngClass]="{'nav-sm container col-md-3 body left_col':true}" -->
+      <div class="col-md-3 left_col" >
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title">
+            <a  class="site_title"><img src="assets/images/logo.svg" class="logo"> <img
+                src="assets/images/logo-sm.png" class="logo-sm"></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+<!-- nav-sm container col-md-3 body left_col -->
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li  >
+                  <a>
+                    <img src="assets/images/filledhome.svg" class="h_normal " />
+                    <img  routerLinkActive="active" src="assets/images/home.svg" class="h_active" /><br class="sm_br" />
+                    Home
+                  </a> </li>
+                <li routerLinkActive="active"><a routerLink="patients">
+                    <img class="p_normal " src="assets/images/patient.svg" />
+                    <img  routerLinkActive="active" src="assets/images/filledpatients.svg" class="c_active" />
+                     <br class="sm_br" />
+
+                    Patients </a> </li>
+                <li  routerLinkActive="active"><a routerLink="Course-Work">
+                    <img src="assets/images/coursework.svg" class="c_normal " />
+                    <img   src="assets/images/filledcoursework.svg" class="c_active" />
+                    <br class="sm_br" />
+                    Course work </a> </li>
+                <li class="displaynone"><a >
+                    <img src="assets/images/rewards.svg" class="r_normal " />
+                    <img src="assets/images/filledrewards.svg" class="r_active" /><br class="sm_br" />
+                    Rewards </a> </li>
+                <li><a >
+                    <img src="assets/images/screenings.svg" class="sr_normal " />
+                    <img src="assets/images/filledscreenings.svg" class="sr_active" /><br class="sm_br" />
+                    Screenings </a> </li>
+                <li><a >
+                    <img src="assets/images/reports.svg" class="re_normal " />
+                    <img src="assets/images/filledreports.svg" class="re_active" /><br class="sm_br" />
+                    Reports </a> </li>
+                <li><a >
+                    <img src="assets/images/settings.svg" class="se_normal " />
+                    <img src="assets/images/filledsettings.svg" class="se_active" /><br class="sm_br" />
+                    Settings </a> </li>
+
+              </ul>
+            </div>
+
+
+          </div>
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small text-center">
+            © 2023 Copyright calmscient.<br />All rights reserved
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <div class="row d-flex justify-content-left">
+            <div class="col-md-5">
+
+
+              <div class="page-header-breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a  data-abc="true">
+                      <span nz-icon nzType="home" nzTheme="outline"></span>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item"> {{currentRoute |titlecase }}
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+            </div>
+
+          </div>
+          <div class="nav toggle hambergermenu">
+            <a (click)="isSideNavCollpased=!isSideNavCollpased" id="menu_toggle"><img src="assets/images/menuiconleft.svg" alt="" class="normal">
+              <img src="assets/images/menuiconright.svg" alt="" class="smnormal"></a>
+          </div>
+          <nav class="nav navbar-nav">
+            <ul class=" navbar-right">
+              <li class="nav-item dropdown open" style="padding-left: 15px;">
+                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
+                  data-toggle="dropdown" aria-expanded="false">
+                  <img src="assets/images/img.jpg" alt="">John Doe
+                </a>
+                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item profile2" href="javascript:;"><img src="assets/images/profile.svg"
+                      alt="Profile Image" class="profile1" />Profile</a>
+                  <a class="dropdown-item profile2" href="Logintohome.html"><img src="assets/images/signout.svg"
+                      alt="Profile Image" class="profile1" />Logout</a>
+                </div>
+              </li>
+
+              <li role="presentation" class="nav-item dropdown open">
+                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="assets/images/notifications.svg" class="notification" />
+
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span>
+                        <strong>Alert notifications</strong>
+                      </span>
+                      <span class="message">The following patients have exhibited activity in the Calmscient
+                        mobile app that indicates they are at-risk for a mental health crisis</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="assets/images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>Justin Septimus</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        High GAD-7 scores
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="assets/images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>Anika Rhiel Madsen</span>
+                        <span class="time">4 mins ago</span>
+                      </span>
+                      <span class="message">
+                        High GAD-7 scores & language in journal entries
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="assets/images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>Miracle Vaccaro</span>
+                        <span class="time">5 mins ago</span>
+                      </span>
+                      <span class="message">
+                        High PHQ-9 scores
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="assets/images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>Jaxson Siphron</span>
+                        <span class="time">5 mins ago</span>
+                      </span>
+                      <span class="message">
+                        High GAD-7 scores
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <div class="text-center">
+                      <a class="dropdown-item">
+                        <strong>See all alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+      <div class="right_col" role="main">
+        <router-outlet></router-outlet>
+        </div>
+    </div>
+  </div>
+</body>

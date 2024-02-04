@@ -1,0 +1,59 @@
+<div>
+  <nz-card>
+    <div nz-row [nzGutter]="16">
+      <div nz-col [nzSpan]="6">
+        <input nz-input nzSize="large" placeholder="Patient account Number" type="number" />
+      </div>
+      <div nz-col [nzSpan]="6">
+        <input nz-input nzSize="large" placeholder="First Name" />
+      </div>
+      <div nz-col [nzSpan]="6">
+        <input nz-input nzSize="large" placeholder="Last Name" />
+      </div>
+      <div nz-col [nzSpan]="5">
+        <nz-select [nzSize]="'large'" [nzPlaceHolder]="'Select course'">
+          <nz-option nzValue="1" nzLabel="Braving anxiety"></nz-option>
+          <nz-option nzValue="2" nzLabel="Taking control"></nz-option>
+        </nz-select>
+      </div>
+      <div nz-col [nzSpan]="1">
+        <div class="search"><span nz-icon nzType="search" nzTheme="outline"></span></div>
+      </div>
+
+    </div>
+  </nz-card>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="24" class="sectiontitle padding-top20">
+    Course work list
+
+  </div>
+  <div nz-col [nzSpan]="24" class="searchtop">
+    <div>
+      <nz-table #basicTable 
+      style="padding: 10px;"
+
+      class="table table-striped table-bordered jambo_table bulk_action"  [nzData]="listOfData">
+        <thead>
+          <tr>
+            <th>Patient account number</th>
+            <th>Patient name</th>
+            <th>% Completed</th>
+            <th>Current course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.patientAccountNumber }}</td>
+            <td>{{ data.PatientName }}</td>
+            <td>{{ data.Completed }}</td>
+            <td>{{ data.currentCcourse }}</td>
+            <td>
+             
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+      </div>
+  </div>
+</div>
